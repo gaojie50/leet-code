@@ -1,0 +1,25 @@
+哈哈哈哈，尝试一下！
+function fn(target, array) {
+            const rowNum = array.length;
+            if(!rowNum){
+                return false;
+            }
+            const colNum = array[0].length;
+            if(!colNum){
+                return false;
+            }
+            let row = 0, col = colNum-1;
+            while(row<rowNum && col>= 0){
+                if(target === array[row][col]){
+                    return true;
+                }else if (target<array[row][col]){
+                    // --col;
+                    col = col-1;
+                }else{
+                    // ++row;
+                    row = row+1;
+                }
+            }
+            return false
+        }
+        console.log( fn(16,[[1,2,8,9],[2,4,9,12],[4,7,10,13],[6,8,11,15]]));
